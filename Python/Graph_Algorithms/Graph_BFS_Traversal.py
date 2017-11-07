@@ -8,7 +8,7 @@ def breadth_first(graph, start=0, bPrintTraversal=False):
     """Description: Traverse a graph using the breadth-first algorithm.
 
     Args:
-        graph: An instance of the graph that is to be traversed.
+        graph: A graph that is to be traversed.
         start: The node fom where the traversal will start.
         bPrintTraversal: If True, it wil print each node while the graph is traversed.
 
@@ -38,7 +38,7 @@ def breadth_first(graph, start=0, bPrintTraversal=False):
     return list_of_traversed_nodes
 
 
-def make_graph():
+def make_graph_for_BFS():
     """Helper function to create a graph for quick testing"""
     g = AdjacencyMatrixGraph(9, directed=True)
     g.add_edge(0, 1)
@@ -55,5 +55,5 @@ def make_graph():
 
 
 if __name__ == "__main__":
-    g = make_graph()
+    g = make_graph_for_BFS()
     breadth_first(g, 0, True)
