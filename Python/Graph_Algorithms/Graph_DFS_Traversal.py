@@ -27,10 +27,10 @@ def depth_first(graph, visited, list_of_traversed_nodes, current=0, bPrintTraver
         print("Visit: ", current)
 
     for vertex in graph.get_adjacent_vertices(current):
-        depth_first(graph, visited, vertex, bPrintTraversal)
+        depth_first(graph, visited, list_of_traversed_nodes, vertex, bPrintTraversal)
 
 
-def run_depth_first(g, start=0, bPrintTraversal=False):
+def run_depth_first(graph, start=0, bPrintTraversal=False):
     """Description: A wrapper function that creates the ''visited'' array and
     ''list_of_traversed_nodes'' list before calling the function ''depth_first''.
 
@@ -40,9 +40,9 @@ def run_depth_first(g, start=0, bPrintTraversal=False):
 
     Returns: A list with the nodes arranged in order of traversal.
     """
-    visited = np.zeros(g.numVertices)
+    visited = np.zeros(graph.numVertices)
     list_of_traversed_nodes = []
-    depth_first(g, visited, list_of_traversed_nodes, start, bPrintTraversal)
+    depth_first(graph, visited, list_of_traversed_nodes, start, bPrintTraversal)
     return list_of_traversed_nodes
 
 
@@ -63,5 +63,5 @@ def make_graph_for_DFS():
 
 
 if __name__ == "__main__":
-    g = make_graph_for_DFS()
-    run_depth_first(g, bPrintTraversal=True)
+    graph = make_graph_for_DFS()
+    run_depth_first(graph, bPrintTraversal=True)
